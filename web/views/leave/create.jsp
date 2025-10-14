@@ -36,6 +36,7 @@
         <textarea id="reason" name="reason" rows="4" cols="50" placeholder="Enter reason..." required></textarea><br><br>
 
         <button type="submit">Submit Request</button>
+        <br><br> 
         <a href="<%= request.getContextPath() %>/views/dashboard.jsp">Cancel</a>
     </form>
 </body>
