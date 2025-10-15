@@ -46,6 +46,7 @@ public class LeaveRequestController extends HttpServlet {
         dao.insert(leave);
 
         // Chuyển hướng về trang danh sách đơn nghỉ phép
-        response.sendRedirect(request.getContextPath() + "/views/leave/list.jsp");
+        response.sendRedirect(request.getContextPath() + "/leave/list");
+
     }
 }
