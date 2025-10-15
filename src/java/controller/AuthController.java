@@ -18,7 +18,6 @@ import java.io.IOException;
 @WebServlet("/login")
 public class AuthController extends HttpServlet {
 
-    private final EmployeeDAO employeeDAO = new EmployeeDAO();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -26,7 +25,8 @@ public class AuthController extends HttpServlet {
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-
+        
+        EmployeeDAO employeeDAO = new EmployeeDAO();
         Employee emp = employeeDAO.login(email, password);
 
         if (emp != null) {
@@ -38,4 +38,11 @@ public class AuthController extends HttpServlet {
             request.getRequestDispatcher("/views/auth/login.jsp").forward(request, response);
         }
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/views/auth/login.jsp").forward(req, resp);
+    }
+    
+    
 }

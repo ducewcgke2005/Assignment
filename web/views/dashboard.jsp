@@ -22,7 +22,9 @@
     <h2>Welcome, <%= user.getName() %>!</h2>
     <p>Email: <%= user.getEmail() %></p>
     <p>Role: <%= user.getRoleName() %></p>
-
+    
+    <a href="<%= request.getContextPath() %>/leave/list">View created leave request</a>
+    <br><br>
     <a href="<%= request.getContextPath() %>/logout">Log out</a>
 
 </body>
